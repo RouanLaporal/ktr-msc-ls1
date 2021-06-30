@@ -1,7 +1,9 @@
 <?php
+$profilManager = new Manager($pdo);
 $content_mail = "";
 $content_name = "";
 $content_phone= "";
+$content_password="";
 if (isset($_POST['submit'])){
     extract($_POST);
     if(empty($name)){
@@ -12,5 +14,23 @@ if (isset($_POST['submit'])){
     }
     else if (filter_var($mail, FILTER_VALIDATE_EMAIL)==false){
         $content_mail = '<div class="error" style="color:red;">Adresse email incorrect</div>';
+    }
+    else if (empty($password)){
+        $content_password = '<div class="error" style="color:red;">Votre mot de passe est incorrect</div>';
+    }
+    else 
+    {
+        $profil = new Profile($_POST);
+        $profilManager->addUser($profil);
+        $_SESSION['user']['name'] = $name;
+        $_SESSION['user']['companyName'] = $companyName;
+        $_SESSION['user']['mail'] = $mail;
+        $_SESSION['user']['phone'] = $phone;
+        $_SESSION['user']['password'] = $password;
+        echo '<pre>';
+        print_r($_SESSION);
+        echo '</pre>';
+        // header('location:test.php');
+        // exit();
     }
 }

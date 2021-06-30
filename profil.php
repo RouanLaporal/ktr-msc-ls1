@@ -1,4 +1,5 @@
 <?php
+require "config/init.php";
 include './back/traitementProfil.php';
 ?>
 <!DOCTYPE html>
@@ -17,6 +18,8 @@ include './back/traitementProfil.php';
                 <input type="mail" name="mail" id="mail" placeholder="Email address">
                 <?= $content_phone;?>
                 <input type="tel" name="phone" id="phone" placeholder="Telephone">
+                <input type="password" name="password" id="password" placeholder="Mot de Passe" required> 
+                <input type="submit" name = "submit" value="Créer mon profil">
             </form>
         </body>
 </html>
