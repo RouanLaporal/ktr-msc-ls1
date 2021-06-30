@@ -9,7 +9,7 @@ include './back/traitmentLogin.php';
         </head>
         <body>
             <div class="container">
-                <h2 class="title-login">Inscrivez-vous</h2>
+                <h2 class="title-login">Connectez vous</h2>
                 <form method="POST" class="login-form">
                     <input type="text" name="name" id="name" placeholder="Name">
                     <input type="password" name="password" placeholder="Mot de passe">

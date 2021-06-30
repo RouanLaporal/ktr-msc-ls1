@@ -1,9 +1,6 @@
 <?php
 require 'config/init.php';
 include 'back/traitementProfilView.php';
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
 ?>
 <div class="container">
     <?= $content; ?>

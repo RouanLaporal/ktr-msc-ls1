@@ -5,9 +5,10 @@ $content_name = "";
 $content_phone= "";
 $content_password="";
 if (isset($_SESSION['user'])){
-    header('location: profilView.php?connect=forbidden');
+    header('location:profilView.php?connect=forbidden');
     exit();
 }
+
 if (isset($_POST['submit'])){
     extract($_POST);
     if(empty($name)){
