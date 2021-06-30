@@ -4,6 +4,10 @@ $content_mail = "";
 $content_name = "";
 $content_phone= "";
 $content_password="";
+if (isset($_SESSION['user'])){
+    header('location: profilView.php?connect=forbidden');
+    exit();
+}
 if (isset($_POST['submit'])){
     extract($_POST);
     if(empty($name)){
@@ -27,10 +31,7 @@ if (isset($_POST['submit'])){
         $_SESSION['user']['mail'] = $mail;
         $_SESSION['user']['phone'] = $phone;
         $_SESSION['user']['password'] = $password;
-        echo '<pre>';
-        print_r($_SESSION);
-        echo '</pre>';
-        // header('location:test.php');
-        // exit();
+        header('location:profilView.php');
+        exit();
     }
 }

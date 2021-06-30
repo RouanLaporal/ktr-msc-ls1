@@ -1,9 +1,8 @@
 <?php
-session_start();
 require 'config/init.php';
 include 'back/traitementProfilView.php';
 echo '<pre>';
-print_r($profil);
+print_r($_SESSION);
 echo '</pre>';
 ?>
 <div class="container">
@@ -34,6 +33,7 @@ echo '</pre>';
         </span>
     </div>
     <a href="?session=destroy"><input type="button" class="destroy-btn" value="Déconnexion"></a>
+    <a href="library.php"><input type="button" value="Mes cartes"></a>
 </div>
 </body>
 

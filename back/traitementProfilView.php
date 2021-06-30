@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $manager = new Manager($pdo);
     $profil = $manager->getUser($_SESSION['user']['name']);
 
